@@ -1,0 +1,33 @@
+package main
+
+func magicCron() {
+	timer := time.NewTicker(1 * time.Second)
+
+	i := 1
+	for {
+
+		if i == 20 {
+			return
+		}
+
+		fmt.Println("Running", time.Now())
+		time.Sleep(time.Duration(rand.Intn(5)) * time.Second)
+		i++
+		<-timer.C
+	}
+}
+
+func main() {
+
+	var wg sync.WaitGroup
+
+	wg.Add(1)
+
+	go func() {
+		defer wg.Done()
+		magicCron()
+	}()
+
+	wg.Wait()
+  fmt.Println("Cron Terminated")
+}
