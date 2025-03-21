@@ -14,6 +14,8 @@ import (
 const CHUNK_SIZE_IN_BYTES = 10 * 1024 * 1024 // 10 MB in bytes
 const DOWNLOAD_PATH = "downloads/"
 
+// TODO: Download each chunk in separately
+
 //export download_file_chunks
 func downloadFileInChunks(sourceFile string, destinationFile string, accessToken string) bool {
 	if strings.TrimSpace(sourceFile) == "" || strings.TrimSpace(destinationFile) == "" {
