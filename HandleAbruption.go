@@ -1,6 +1,6 @@
 package main
 
-import (git
+import (
 	"fmt"
 	"os"
 	"os/signal"
